@@ -1,0 +1,17 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+penguins |> drop_na() |> 
+  ggplot(mapping= aes( x = flipper_length_mm,y = body_mass_g )) +
+  geom_point(mapping= aes(color = "blue")) + 
+  geom_smooth(method = "lm",formula = y ~ x) + 
+  labs(title ="Body Mass and Flipper Length",
+       subtitle = "Dimensions for Adelie, Chinstrap, and Gentoo Penguins",
+       x ="Flipper Length (mm)", y ="Body Mass (g)", 
+       color ="Species", shape ="Species" )
+       
+       
+```
